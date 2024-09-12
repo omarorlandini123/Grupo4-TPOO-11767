@@ -5,14 +5,13 @@
 
 /**
  *
- * @author Estudiante
+ * @author ALEJANDRO
  */
 public class MiProyecto {
     
-    public static void main(String [] args){
-    
-        System.out.println("Hola Mund@");
-    
+    public static void main(String [] args ){
+            
+            System.out.println("HolaMundo");
     }
     
 }
