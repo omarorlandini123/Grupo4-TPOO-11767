@@ -1,3 +1,7 @@
+package principal;
+
+import pantallas.Pantalla1;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -10,8 +14,9 @@
 public class MiProyecto {
     
     public static void main(String [] args ){
-            
-            System.out.println("HolaMundo");
+          Pantalla1 ventana = new Pantalla1();
+                ventana.setLocationRelativeTo(null);
+                ventana.setVisible(true);
     }
     
 }
