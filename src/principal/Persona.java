@@ -14,6 +14,7 @@ public class Persona {
    private String telefono;
    private String documento;
    private boolean estado;
+   
     public String getNombre() {
         return nombre;
     }
