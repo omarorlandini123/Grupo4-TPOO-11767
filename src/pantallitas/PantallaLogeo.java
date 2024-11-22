@@ -109,7 +109,10 @@ public class PantallaLogeo extends javax.swing.JFrame {
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
        DBconexion.CLogin objetoLogin = new DBconexion.CLogin();
        objetoLogin.validaUsuario(txtUsuario, txtContrasenia);
-        txtUsuario.setText("");
+        String rol=null;
+        
+       objetoLogin.abrirFormularioPorRol(""+ rol);
+       txtUsuario.setText("");
         txtContrasenia.setText("");
     }//GEN-LAST:event_btnIngresarActionPerformed
 

@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import java.sql.ResultSet;
 import pantallitas.FormMenuPrincipal;
 import pantallitas.FormMenuUsuario;
+import pantallitas.PantallaLogeo;
 /**
  *
  * @author NEISER
@@ -38,13 +39,13 @@ public class CLogin {
                 usuarioAutenticado.setRol(rs.getString("rol"));
                 usuarioAutenticado.setActivo(rs.getBoolean("activo"));
                 
-                // Verificar si el usuario está activo
+               
                 if (!usuarioAutenticado.isActivo()) {
                     JOptionPane.showMessageDialog(null, "Este usuario está desactivado.");
                     return null;
                 }
                 
-                // Abrir el formulario correspondiente según el rol
+               
                 abrirFormularioPorRol(usuarioAutenticado.getRol());
                 
                 JOptionPane.showMessageDialog(null, "Bienvenido " + usuarioAutenticado.getUsuario());
@@ -57,7 +58,7 @@ public class CLogin {
         return usuarioAutenticado; 
     }
 
-    private void abrirFormularioPorRol(String rol) {
+    public void abrirFormularioPorRol(String rol) {
         try {
             switch (rol.toLowerCase()) {
                 case "administrador":
