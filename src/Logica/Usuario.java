@@ -8,7 +8,7 @@ package Logica;
  *
  * @author NEISER
  */
-public class Usuario {
+public class Usuario extends AdministradorPrincipal {
     private String rol;
     private boolean activo;
 

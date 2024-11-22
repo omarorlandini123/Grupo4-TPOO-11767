@@ -9,7 +9,7 @@ package Logica;
  * @author NEISER
  */
 public class AdministradorPrincipal {
-    
+    private int idUsuario;
     private String usuario;
     private String contraseña;
 
@@ -27,6 +27,14 @@ public class AdministradorPrincipal {
 
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
     
 }

@@ -8,7 +8,7 @@ package Logica;
  *
  * @author NEISER
  */
-public class Voluntario {
+public class Voluntario extends Persona {
     private String disponibilidad;
     private String areaAsignada;
 

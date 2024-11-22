@@ -9,7 +9,7 @@ import java.util.ArrayList;
  *
  * @author NEISER
  */
-public class Proveedor {
+public class Proveedor extends Persona {
     private String empresa;
     private String tipoSuministro;
     private List<Producto> productoSuministrados;

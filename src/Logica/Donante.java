@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author NEISER
  */
-public class Donante {
+public class Donante extends Persona {
     private String tipoDonacion;
     private String frecuenciaDonacion;
     private List<Producto> productosDonados;

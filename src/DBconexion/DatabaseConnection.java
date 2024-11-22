@@ -37,7 +37,7 @@ public class DatabaseConnection {
     return connection;
     }
      public static void main(String[] args) {
-        // Llamar al método getConnection() para establecer la conexión
+      /*  // Llamar al método getConnection() para establecer la conexión
         Connection connection = getConnection();
         
         // Aquí puedes realizar operaciones con la conexión, por ejemplo:
@@ -46,7 +46,7 @@ public class DatabaseConnection {
             System.out.println("Connection is ready to use.");
         } else {
             System.out.println("Connection failed.");
-        }
+        }*/
      }
     
 }

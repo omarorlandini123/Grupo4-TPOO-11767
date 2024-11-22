@@ -9,7 +9,7 @@ import java.util.ArrayList;
  *
  * @author NEISER
  */
-public class Cocinero {
+public class Cocinero  extends Persona{
     private String especialidad;
     private boolean certificado;
     private List<String> recetas;
