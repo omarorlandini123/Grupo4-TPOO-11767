@@ -10,14 +10,14 @@ package Logica;
  */
 public class Usuario 
         extends Administrador {
-    private String id;
+    private int id;
     private boolean activo;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

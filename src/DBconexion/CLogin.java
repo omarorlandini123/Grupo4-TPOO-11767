@@ -18,8 +18,10 @@ import pantallitas.PantallaLogeo;
  */
 public class CLogin {
     
-     public Logica.Usuario validaUsuario(JTextField usuario, JPasswordField contrasenia) {
-        Logica.Usuario usuarioAutenticado = null;
+     /*public Logica.Usuario validaUsuario(JTextField usuario, JPasswordField contrasenia) {
+         
+     
+       Logica.Usuario usuarioAutenticado = null;
         try {
             ResultSet rs = null;
             PreparedStatement ps = null;
@@ -80,4 +82,7 @@ public class CLogin {
             JOptionPane.showMessageDialog(null, "Error al abrir el formulario: " + e.toString());
         }
     }
+*/
+      
 }
+      
