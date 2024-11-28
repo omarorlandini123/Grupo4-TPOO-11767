@@ -10,7 +10,6 @@ package pantallitas;
  */
 public class Principal {
      public static void main(String[] args) {
-       PantallaLogeo objetoLogin = new PantallaLogeo();
-       objetoLogin.setVisible(true);
+       new Login();
     }
 }

@@ -86,4 +86,7 @@ public class Login {
         ventana.setLocationRelativeTo(null); //centrar la ventana en la pantalla
         ventana.setVisible(true);
     }
+    
+    
+    
 }
