@@ -5,6 +5,7 @@
 package Logica;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -15,6 +16,7 @@ public class Producto {
     private String categoria;
     private int cantidad;
     private Date fechaExpiracion;
+    private List <Proveedor> Proveedores;
 
     public String getNombre() {
         return nombre;

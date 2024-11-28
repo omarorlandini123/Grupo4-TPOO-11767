@@ -15,8 +15,7 @@ import java.util.ArrayList;
 public class Donante extends Persona {
     private String tipoDonacion;
     private String frecuenciaDonacion;
-    private List<Producto> productosDonados;
-    
+
     public String getTipoDonacion() {
         return tipoDonacion;
     }
@@ -32,12 +31,5 @@ public class Donante extends Persona {
     public void setFrecuenciaDonacion(String frecuenciaDonacion) {
         this.frecuenciaDonacion = frecuenciaDonacion;
     }
-
-    public List<Producto> getProductosDonados() {
-        return productosDonados;
-    }
-
-    public void setProductosDonados(List<Producto> productosDonados) {
-        this.productosDonados = productosDonados;
-    }
+  
 }

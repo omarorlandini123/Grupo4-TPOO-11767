@@ -11,11 +11,13 @@ import java.util.ArrayList;
  * @author NEISER
  */
 public class Evento {
+    
     private String nombreEvento;
     private Date fecha;
-    private List<Voluntario> voluntariosParticipantes;
-    private List<Donante> donantesParticipantes;
-    private List<Producto> productoDistribuidos;
+    private Administrador administrador;
+    private Producto producto;
+    private Cocinero cocinero;
+    private List<Voluntario> listaVoluntarios;
 
     public String getNombreEvento() {
         return nombreEvento;
@@ -33,28 +35,39 @@ public class Evento {
         this.fecha = fecha;
     }
 
-    public List<Voluntario> getVoluntariosParticipantes() {
-        return voluntariosParticipantes;
+    public Administrador getAdministrador() {
+        return administrador;
     }
 
-    public void setVoluntariosParticipantes(List<Voluntario> voluntariosParticipantes) {
-        this.voluntariosParticipantes = voluntariosParticipantes;
+    public void setAdministrador(Administrador administrador) {
+        this.administrador = administrador;
     }
 
-    public List<Donante> getDonantesParticipantes() {
-        return donantesParticipantes;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setDonantesParticipantes(List<Donante> donantesParticipantes) {
-        this.donantesParticipantes = donantesParticipantes;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
-    public List<Producto> getProductoDistribuidos() {
-        return productoDistribuidos;
+    public Cocinero getCocinero() {
+        return cocinero;
     }
 
-    public void setProductoDistribuidos(List<Producto> productoDistribuidos) {
-        this.productoDistribuidos = productoDistribuidos;
+    public void setCocinero(Cocinero cocinero) {
+        this.cocinero = cocinero;
     }
+
+    public List<Voluntario> getListaVoluntarios() {
+        return listaVoluntarios;
+    }
+
+    public void setListaVoluntarios(List<Voluntario> listaVoluntarios) {
+        this.listaVoluntarios = listaVoluntarios;
+    }
+   
+
+   
     
 }
