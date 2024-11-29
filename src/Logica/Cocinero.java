@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Logica;
-import java.util.List;
-import java.util.ArrayList;
 /**
  *
  * @author NEISER
@@ -12,7 +10,6 @@ import java.util.ArrayList;
 public class Cocinero  extends Persona{
     private String especialidad;
     private boolean certificado;
-    private List<String> recetas;
 
     public String getEspecialidad() {
         return especialidad;
@@ -28,13 +25,5 @@ public class Cocinero  extends Persona{
 
     public void setCertificado(boolean certificado) {
         this.certificado = certificado;
-    }
-
-    public List<String> getRecetas() {
-        return recetas;
-    }
-
-    public void setRecetas(List<String> recetas) {
-        this.recetas = recetas;
     }
 }

@@ -8,16 +8,17 @@ package Logica;
  *
  * @author NEISER
  */
-public class Usuario extends AdministradorPrincipal {
-    private String rol;
+public class Usuario 
+        extends Administrador {
+    private int id;
     private boolean activo;
 
-    public String getRol() {
-        return rol;
+    public int getId() {
+        return id;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public boolean isActivo() {
