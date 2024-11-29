@@ -16,8 +16,7 @@ public class Producto {
     private String categoria;
     private int cantidad;
     private Date fechaExpiracion;
-
-    private List <Proveedor> Proveedores;
+    private Evento eventos;
 
 
     public String getNombre() {
@@ -50,6 +49,14 @@ public class Producto {
 
     public void setFechaExpiracion(Date fechaExpiracion) {
         this.fechaExpiracion = fechaExpiracion;
+    }
+
+    public Evento getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(Evento eventos) {
+        this.eventos = eventos;
     }
 
 }

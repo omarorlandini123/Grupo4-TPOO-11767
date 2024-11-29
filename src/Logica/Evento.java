@@ -14,15 +14,7 @@ public class Evento {
     
     private String nombreEvento;
     private Date fecha;
-
-
     private List<Producto> productoDistribuidos;
-
-    private AdministradorPrincipal administrador;
-    private Producto producto;
-    private Cocinero cocinero;
-
-
 
     public String getNombreEvento() {
         return nombreEvento;
@@ -46,24 +38,6 @@ public class Evento {
 
   
 
-    public Producto getProducto() {
-        return producto;
     }
-
-    public void setProducto(Producto producto) {
-        this.producto = producto;
-    }
-
-    public Cocinero getCocinero() {
-        return cocinero;
-
-    }
-
-    public void setCocinero(Cocinero cocinero) {
-        this.cocinero = cocinero;
-    }
-
-
-   
     
 }
