@@ -16,7 +16,9 @@ public class Producto {
     private String categoria;
     private int cantidad;
     private Date fechaExpiracion;
-   Evento eventos;
+
+    private List <Proveedor> Proveedores;
+
 
     public String getNombre() {
         return nombre;
