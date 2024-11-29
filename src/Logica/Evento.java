@@ -3,21 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Logica;
+
 import java.util.Date;
 import java.util.List;
-import java.util.ArrayList;
+
 /**
  *
  * @author NEISER
  */
 public class Evento {
-    
     private String nombreEvento;
     private Date fecha;
-    private Administrador administrador;
-    private Producto producto;
-    private Cocinero cocinero;
-    private List<Voluntario> listaVoluntarios;
+    private List<Producto> productos;
 
     public String getNombreEvento() {
         return nombreEvento;
@@ -35,39 +32,11 @@ public class Evento {
         this.fecha = fecha;
     }
 
-    public Administrador getAdministrador() {
-        return administrador;
+    public List<Producto> getProductos() {
+        return productos;
     }
 
-    public void setAdministrador(Administrador administrador) {
-        this.administrador = administrador;
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
     }
-
-    public Producto getProducto() {
-        return producto;
-    }
-
-    public void setProducto(Producto producto) {
-        this.producto = producto;
-    }
-
-    public Cocinero getCocinero() {
-        return cocinero;
-    }
-
-    public void setCocinero(Cocinero cocinero) {
-        this.cocinero = cocinero;
-    }
-
-    public List<Voluntario> getListaVoluntarios() {
-        return listaVoluntarios;
-    }
-
-    public void setListaVoluntarios(List<Voluntario> listaVoluntarios) {
-        this.listaVoluntarios = listaVoluntarios;
-    }
-   
-
-   
-    
 }

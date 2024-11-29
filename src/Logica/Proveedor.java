@@ -38,3 +38,4 @@ public class Proveedor extends Persona {
         this.productoSuministrados = productoSuministrados;
     }
 }
+

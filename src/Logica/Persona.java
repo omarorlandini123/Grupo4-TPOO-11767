@@ -10,8 +10,8 @@ package Logica;
  */
 public class Persona {
     private String nombre;
-    private String dni;
-    private Usuario usuario;
+    private String apellido;
+   private String documento;
 
     public String getNombre() {
         return nombre;
@@ -21,21 +21,23 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public String getDni() {
-        return dni;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public String getDocumento() {
+        return documento;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setDocumento(String documento) {
+        this.documento = documento;
     }
+
+
     
     
 
