@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 import DBconexion.*;
 import Logica.*;
 
@@ -64,22 +65,29 @@ public class Login {
                 String usuarioIngresado = txtUsuario.getText();
                 String passwordIngresado = new String(txtPassword.getPassword());
 
-                // Validar login usando CLogin
-                CLogin cl = new CLogin();
-                Usuario usuario = cl.login(usuarioIngresado, passwordIngresado);
+                // Obtener la conexión a la base de datos
+                Connection con = DatabaseConnection.getConnection();
 
-                if (usuario != null) {
-                    ventana.dispose(); // Cerrar ventana de login
+                if (con != null) {
+                    // Validar login usando CLogin
+                    CLogin cl = new CLogin(con);  // Pasamos la conexión al constructor
+                    Usuario usuario = cl.login(usuarioIngresado, passwordIngresado);
 
-                    // Redirigir según el rol
-                    if (usuario.getRol().equals("ADMIN")) {
-                        new DashboardAdmin(); // Abre Dashboard de Administrador
-                    } else if (usuario.getRol().equals("USER")) {
-                        new DashboardUsuario(); // Abre Dashboard de Usuario
+                    if (usuario != null) {
+                        ventana.dispose(); // Cerrar ventana de login
+
+                        // Redirigir según el rol
+                        if (usuario.getRol().equals("ADMIN")) {
+                            new DashboardAdmin(); // Abre Dashboard de Administrador
+                        } else if (usuario.getRol().equals("USER")) {
+                            new DashboardUsuario(); // Abre Dashboard de Usuario
+                        }
+                    } else {
+                        // Mostrar error si no coincide
+                        JOptionPane.showMessageDialog(ventana, "Usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                 } else {
-                    // Mostrar error si no coincide
-                    JOptionPane.showMessageDialog(ventana, "Usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(ventana, "Error de conexión a la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

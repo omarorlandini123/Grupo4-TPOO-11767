@@ -11,7 +11,8 @@ package Logica;
 public class AdministradorPrincipal extends Persona {
     private int idAdmi;
     private String contra;
-    private Usuario usuario;
+    private String usuario;
+    
 
     public int getIdAdmi() {
         return idAdmi;
@@ -29,12 +30,13 @@ public class AdministradorPrincipal extends Persona {
         this.contra = contra;
     }
 
-    public Usuario getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
+    
 
 }

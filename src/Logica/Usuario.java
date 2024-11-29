@@ -16,15 +16,16 @@ public class Usuario
     private boolean activo;
     private String rol ; 
     private List<Usuario> listaUsuario;
-     
+    
+    
     public int getId() {
         return id;
     }
-
+    
     public void setId(int id) {
         this.id = id;
     }
-
+  
     public boolean isActivo() {
         return activo;
     }
@@ -33,7 +34,7 @@ public class Usuario
         this.activo = activo;
     }
 
-    public List<Usuario> getListaUsuario() {
+   public List<Usuario> getListaUsuario() {
         return listaUsuario;
     }
 
@@ -48,4 +49,6 @@ public class Usuario
     public void setRol(String rol) {
         this.rol = rol;
     }
+ 
+
 }

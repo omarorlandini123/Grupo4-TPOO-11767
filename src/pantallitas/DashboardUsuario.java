@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 public class DashboardUsuario {
 
     public DashboardUsuario() {
+        
         //jframe
         JFrame ventana = new JFrame("Dashboard - Usuario");
         ventana.setSize(600, 400);
