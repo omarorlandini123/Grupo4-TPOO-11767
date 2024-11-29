@@ -5,12 +5,11 @@
 package pantallitas;
 
 import DBconexion.*;
-import Logica.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-
+import Logica.*;
 
 /**
  *

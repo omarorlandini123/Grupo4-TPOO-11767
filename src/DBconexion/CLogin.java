@@ -9,7 +9,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import java.sql.ResultSet;
-
+import java.sql.Statement;
+import DBconexion.LoginExtra;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +18,14 @@ import java.util.List;
 public class CLogin {
 
     private Connection connection;
-
+     private Statement statement;
     public CLogin(Connection con) {
-        this.connection = con;
+        try {
+            connection = con;
+            statement = con.createStatement();
+        } catch (Exception s) {
+            System.err.println(s.getMessage());
+        }
     }
 
     // Validar login
@@ -46,99 +52,104 @@ public class CLogin {
 
     // Obtener lista de usuarios
     public List<Usuario> getUsuarios() {
-        String query = "SELECT * FROM usuarios";
-        List<Usuario> usuarios = new ArrayList<>();
-        try (PreparedStatement ps = connection.prepareStatement(query);
-             ResultSet rs = ps.executeQuery()) {
-
-            while (rs.next()) {
-                Usuario usuario = new Usuario();
-                usuario.setId(rs.getInt("id"));
-                usuario.setNombre(rs.getString("nombre"));
-                usuario.setUsuario(rs.getString("usuario"));
-                usuario.setActivo(rs.getBoolean("activo"));
-                usuario.setRol(rs.getString("rol"));
-                usuarios.add(usuario);
-            }
-        } catch (SQLException e) {
-            System.err.println("Error al obtener usuarios: " + e.getMessage());
+          try {
+            String query = "Select * from usuarios";
+            ResultSet resultSet = statement.executeQuery(query);
+            return LoginExtra.fromResultSet(resultSet);
+        } catch (Exception s) {
+            System.err.println(s.getMessage());
+            return null;
         }
-        return usuarios;
     }
 
     // Insertar un nuevo usuario
     public boolean insertarUsuario(Usuario usuario) {
-        String query = "INSERT INTO usuarios (nombre, usuario, clave, activo, rol) VALUES (?, ?, ?, ?, ?)";
-        try (PreparedStatement ps = connection.prepareStatement(query)) {
-            ps.setString(1, usuario.getNombre());
-            ps.setString(2, usuario.getUsuario());
-            ps.setString(3, usuario.getContra());
-            ps.setBoolean(4, usuario.isActivo());
-            ps.setString(5, usuario.getRol());
-            return ps.executeUpdate() > 0;
-        } catch (SQLException e) {
-            System.err.println("Error al insertar usuario: " + e.getMessage());
+        String queryIns = ""
+                + "INSERT INTO `olla_comun`.`usuarios`\n"
+                + "(`nombre`,\n"
+                + "`usuario`,\n"
+                + "`clave`,\n"
+                + "`dni`,\n"
+                + "`activo`)\n"
+                + "`rol`)\n"
+                + "VALUES\n"
+                + "('" + usuario.getNombre() + "',\n"
+                + "'" + usuario.getUsuario()+ "',\n"
+                + "'" + usuario.getContra()+ "',\n"
+                + usuario.getDocumento()+ ",\n"
+                + usuario.isActivo()+ ",\n"
+                + "'" + usuario.getRol()+ "');";
+       try {
+            int executeIns = statement.executeUpdate(queryIns);
+            if (executeIns > 0) {
+                System.out.println("SE INSERTÓ EL NUEVO REGISTRO");
+                return true;
+            } else {
+                System.err.println("No se pudo insertar");
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
         }
         return false;
     }
 
     // Actualizar datos del usuario
     public boolean actualizarUsuario(Usuario usuario) {
-        String query = "UPDATE usuarios SET nombre = ?, clave = ?, activo = ?, rol = ? WHERE id = ?";
-        try (PreparedStatement ps = connection.prepareStatement(query)) {
-            ps.setString(1, usuario.getNombre());
-            ps.setString(2, usuario.getContra());
-            ps.setBoolean(3, usuario.isActivo());
-            ps.setString(4, usuario.getRol());
-            ps.setInt(5, usuario.getId());
-            return ps.executeUpdate() > 0;
-        } catch (SQLException e) {
-            System.err.println("Error al actualizar usuario: " + e.getMessage());
+          String queryUpd = ""
+                + "update usuarios "
+                + "set "
+                + "nombre = '" + usuario.getNombre() + "' ,"
+                + "usuario= '" + usuario.getUsuario()+ "', "
+                + "clave = '" + usuario.getContra()+ "', "
+                + "dni = " + usuario.getDocumento()+ ", "
+                + "activo = '" + usuario.isActivo()+ "' "
+                + "rol = '" + usuario.getRol()+ "' "
+                + "where id = " + usuario.getId();
+        
+        try {
+            int executeUpdate = statement.executeUpdate(queryUpd);
+            if (executeUpdate > 0) {
+                System.out.println("SE ACTUALIZó el correo");
+                return true;
+            } else {
+                System.err.println("No se pudo actualizar");
+            }
+
+        } catch (Exception s) {
+            System.err.println(s.getMessage());
         }
         return false;
     }
 
     public boolean eliminarUsuario(Usuario usuario) {
-    String queryDel = "DELETE FROM usuarios WHERE id = ?";
-
-    try (PreparedStatement ps = connection.prepareStatement(queryDel)) {
-        ps.setInt(1, usuario.getId());  // Usamos el ID del Usuario para la eliminación
-        int executeDel = ps.executeUpdate();
-        if (executeDel > 0) {
-            System.out.println("SE ELIMINÓ EL USUARIO");
-            return true;
-        } else {
-            System.err.println("No se pudo eliminar el usuario");
+     String queryDel = ""
+                + "DELETE FROM `olla_comun`.`usuarios`\n"
+                + "WHERE id = " + usuario.getId();
+  try {
+            int executeDel = statement.executeUpdate(queryDel);
+            if (executeDel > 0) {
+                System.out.println("SE ELIMINÓ EL NUEVO REGISTRO");
+                return true;
+            } else {
+                System.err.println("No se pudo eliminar");
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
         }
-    } catch (SQLException e) {
-        System.err.println("Error al eliminar usuario: " + e.getMessage());
-    }
-    return false;
+        return false;
 }
 
 
     // Buscar usuarios por nombre o usuario
     public List<Usuario> buscarUsuarios(String criterio) {
-        String query = "SELECT * FROM usuarios WHERE nombre LIKE ? OR usuario LIKE ?";
-        List<Usuario> usuarios = new ArrayList<>();
-        try (PreparedStatement ps = connection.prepareStatement(query)) {
-            ps.setString(1, "%" + criterio + "%");
-            ps.setString(2, "%" + criterio + "%");
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
-                Usuario usuario = new Usuario();
-                usuario.setId(rs.getInt("id"));
-                usuario.setNombre(rs.getString("nombre"));
-                usuario.setUsuario(rs.getString("usuario"));
-                usuario.setActivo(rs.getBoolean("activo"));
-                usuario.setRol(rs.getString("rol"));
-                usuarios.add(usuario);
-            }
-        } catch (SQLException e) {
-            System.err.println("Error al buscar usuarios: " + e.getMessage());
-        }
-        return usuarios;
+       try {
+        String query = "SELECT * FROM usuarios WHERE nombre LIKE '%" + criterio + "%' OR dni LIKE '%" + criterio + "%'";
+        ResultSet resultSet = statement.executeQuery(query);
+        return LoginExtra.fromResultSet(resultSet);
+    } catch (Exception e) {
+        System.err.println(e.getMessage());
+        return new ArrayList<>();
+    }
     }
 }
 

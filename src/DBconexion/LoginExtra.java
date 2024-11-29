@@ -21,12 +21,15 @@ public class LoginExtra  extends Usuario {
 }
 
   public LoginExtra(ResultSet rs) {
+      
     try {
-        setId(rs.getInt("id"));
-        setNombre(rs.getString("nombre"));
-        setUsuario(rs.getString("usuario"));
-        setActivo(rs.getBoolean("activo"));
-        setRol(rs.getString("rol"));
+        setId(rs.getInt(1));
+        setNombre(rs.getString(2));
+        setUsuario(rs.getString(3));
+        setContra(rs.getString(4));
+        setDocumento(rs.getString(5));
+        setActivo(rs.getBoolean(6));
+        setRol(rs.getString(7));
     } catch (Exception e) {
         System.err.println("Error al crear Usuario desde ResultSet: " + e.getMessage());
     }
