@@ -15,7 +15,7 @@ public class Producto {
     private String categoria;
     private int cantidad;
     private Date fechaExpiracion;
-
+ 
     public String getNombre() {
         return nombre;
     }

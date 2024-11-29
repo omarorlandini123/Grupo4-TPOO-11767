@@ -13,8 +13,7 @@ import java.util.ArrayList;
 public class Evento {
     private String nombreEvento;
     private Date fecha;
-    private List<Voluntario> voluntariosParticipantes;
-    private List<Donante> donantesParticipantes;
+
     private List<Producto> productoDistribuidos;
 
     public String getNombreEvento() {
@@ -31,22 +30,6 @@ public class Evento {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
-    }
-
-    public List<Voluntario> getVoluntariosParticipantes() {
-        return voluntariosParticipantes;
-    }
-
-    public void setVoluntariosParticipantes(List<Voluntario> voluntariosParticipantes) {
-        this.voluntariosParticipantes = voluntariosParticipantes;
-    }
-
-    public List<Donante> getDonantesParticipantes() {
-        return donantesParticipantes;
-    }
-
-    public void setDonantesParticipantes(List<Donante> donantesParticipantes) {
-        this.donantesParticipantes = donantesParticipantes;
     }
 
     public List<Producto> getProductoDistribuidos() {

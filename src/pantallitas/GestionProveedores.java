@@ -80,14 +80,14 @@ public class GestionProveedores extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Empresa", "Tipo Suministro", "Producto Suministro"
+                "Proveedor", "Tipo Suministro", "Producto Suministro"
             }
         ));
         jScrollPane1.setViewportView(tbProductos);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 500, 430));
 
-        jLabel2.setText("Empresa");
+        jLabel2.setText("Proveedor");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         jLabel3.setText("Tipo Suministro");
