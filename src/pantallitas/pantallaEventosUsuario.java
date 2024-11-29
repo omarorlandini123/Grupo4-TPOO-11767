@@ -76,7 +76,7 @@ public class pantallaEventosUsuario extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaEventos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 630, 390));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 630, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

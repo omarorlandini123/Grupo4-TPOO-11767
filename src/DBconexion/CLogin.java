@@ -9,8 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import java.sql.ResultSet;
-import pantallitas.FormMenuPrincipal;
-import pantallitas.FormMenuUsuario;
+
 import java.sql.*;
 /**
  *

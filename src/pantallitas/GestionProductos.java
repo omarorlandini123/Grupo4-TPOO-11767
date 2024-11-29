@@ -107,7 +107,7 @@ public class GestionProductos extends javax.swing.JFrame {
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 120, -1));
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 120, -1));
 
-        jLabel5.setText("Proveedor");
+        jLabel5.setText("Cantidad");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
         getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 120, -1));
 
