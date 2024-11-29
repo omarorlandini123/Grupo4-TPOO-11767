@@ -298,9 +298,9 @@ public class GestionUsuario extends javax.swing.JFrame {
       usuario.setUsuario(txtUsuario.getText());
       usuario.setNombre(txtDNI.getText());  
       usuario.setNombre(txtClave.getText());  
-      boolean activo = RadioActivo.isSelected();  // Si el RadioButton está seleccionado, será 'true', si no 'false'
+      boolean activo = RadioActivo.isSelected(); 
       usuario.setActivo(activo); 
-      String rolSeleccionado = cmbEscoger.getSelectedItem().toString();  // Obtener el rol seleccionado en el ComboBox
+      String rolSeleccionado = cmbEscoger.getSelectedItem().toString();  
       usuario.setRol(rolSeleccionado);
       
       if(editando) {}
@@ -311,9 +311,9 @@ public class GestionUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
-     /*   if (evt.getClickCount() > 1) {
-            editarPersona();
-        }*/
+        if (evt.getClickCount() > 1) {
+            editarUsuario();
+        }
     }//GEN-LAST:event_jList1MouseClicked
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
